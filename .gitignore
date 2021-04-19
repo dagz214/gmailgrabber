@@ -1,6 +1,13 @@
 #files containing personal informatin:
 client_secret.json
+gmail_token.json
+profiles.yaml
 
+#vscode settings
+.vscode/
+
+#testing folder
+saves/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
