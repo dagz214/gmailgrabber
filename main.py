@@ -1,9 +1,10 @@
+# -*- coding: utf8 -*-
 from simplegmail import Gmail
 from simplegmail.query import construct_query
 import yaml
 import os
 
-BASE_PATH = "./saves"
+BASE_PATH = "./saves1"
 
 
 def check_if_path_exists_or_create(path: str) -> bool:
@@ -80,9 +81,8 @@ def download_attachments(message, description):
 gmail = Gmail()
 
 #open the external profiles yaml file
-with open(r'.\profiles.yaml') as file:
+with open(r'.\profiles.yaml', encoding='utf8') as file:
     profile_list = yaml.load(file, Loader=yaml.FullLoader)
 
 for profile in profile_list:
     get_messages(gmail, list(profile.keys())[0], **list(profile.values())[0])
-
