@@ -17,8 +17,12 @@ for sc in scenarios_constructors:
     scenario_name=list(sc.keys())[0]
     scenario_kwrgs=list(sc.values())[0]
 
-    scenario_class=sc[scenario_name].pop('scenario_class')
-    
+    try:
+        scenario_class=sc[scenario_name].pop('scenario_class')
+    except KeyError as e: 
+        print(f'I got a KeyError - reason: {scenario_name} has no {str(e)}')
+        scenario_class=''
+
     if scenario_class=='attdownloader':
         scenarios.append(AttDownloader(gmail, scenario_name, **scenario_kwrgs))
     elif 1==2:
