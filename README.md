@@ -18,16 +18,18 @@ Fetch all of those receipts with this SIMPLE ```.yaml```:
       exact_phrase: microsoft 365 business basic
       months_back: 6
       
-- Office 365 Standart:
-    scenario_class: attdownloader
-    query_params:
-      sender: microsoft-noreply@microsoft.com
-      attachment: True
-      exact_phrase: microsoft 365 business standard
-      months_back: 6
+- Office 365 Standard:				#just a name
+    scenario_class: attdownloader	#the type of scenario, in this case its "attachment download"
+    query_params:					#what to look for:
+      sender: microsoft-noreply@microsoft.com	#the sender of the message
+      attachment: True							#the messeage has an attachment
+      exact_phrase: microsoft 365 business standard #the message contains this phrase
+      months_back: 6 #how far to look back
 ```
 
-This would not only download your attachment, but will also rename the files to easy to understandable, and date-sortable filenames.
+This would not only download your attachment, but will also rename the files to easy to understand, and date-sortable filenames.
+
+Additional functionality for ```query_params``` mentioned in [simplegmail/query.py](https://github.com/jeremyephron/simplegmail/blob/master/simplegmail/query.py).
 
 ## Usage
 
