@@ -70,7 +70,6 @@ class AttDownloader(Downloader):
             if message.attachments:
                 month = message.date[5:7]
                 year = message.date[0:4]
-                # path = BASE_PATH
                 # path = f"{self.base_path}/{year}_{month}"
                 path = f"{self.base_path}"
                 if self.check_if_path_exists_or_create(path):
