@@ -21,8 +21,8 @@ Fetch all of those receipts with this SIMPLE ```.yaml```:
 - Office 365 Standard:				#just a name
     scenario_class: attdownloader	#the type of scenario, in this case its "attachment download"
     query_params:					#what to look for:
-      sender: microsoft-noreply@microsoft.com	#the sender of the message
-      attachment: True							#the messeage has an attachment
+      sender: microsoft-noreply@microsoft.com	    #the sender of the message
+      attachment: True							    #the messeage has an attachment
       exact_phrase: microsoft 365 business standard #the message contains this phrase
       months_back: 6 #how far to look back
 ```
