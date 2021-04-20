@@ -1,6 +1,7 @@
 #The yaml is a list of items like the following syntax:
-  - Office 365 Basic: #Name - this is a name that would be used in the resulting file name.
-    sender: microsoft-noreply@microsoft.com #Arguments that match symplegmail query syntax
-    attachment: True
-    exact_phrase: microsoft 365 business Basic
-    months_back: 3 #argument that counts the  months to look back, not as a simplegmail argument.
+- Office 365 Basic: #Name - this is a name that would be used in the resulting file name.
+    query_params:
+      sender: microsoft-noreply@microsoft.com #Arguments that match symplegmail query syntax
+      attachment: True
+      exact_phrase: microsoft 365 business Basic
+      months_back: 3 #argument that counts the  months to look back, not as a simplegmail argument.

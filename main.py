@@ -22,7 +22,8 @@ def check_if_path_exists_or_create(path: str) -> bool:
         return True
 
 
-def get_messages(gmail, description, download=True, **kwargs):
+
+def get_messages(gmail, scenario_name, download=True, **kwargs):
     """
 
     Main function to get messages and download attchments.
@@ -33,27 +34,26 @@ def get_messages(gmail, description, download=True, **kwargs):
         **kwargs: query parameters as defined in the simplegmail documentation
         
     """
-    query_params = {}
-
-    # get the months to look back and add to query
-    months_back=kwargs.pop('months_back')
+    # construct the query params from kwrgs dictionary:
+    query_params = kwargs.pop('query_params')
+    months_back=query_params.pop('months_back')
     query_params['newer_than']=(months_back, "month")
 
     # parse the remaining kwargs for the query
-    for key, value in kwargs.items():
-        query_params[key] = value
+    # for key, value in kwargs.items():
+    #     query_params[key] = value
 
     messages = gmail.get_messages(query=construct_query(query_params))
     
     # check if attachment should be download an iterate messages:
     if download == True:
         for message in messages:
-            download_attachments(message, description)
+            download_attachments(message, scenario_name)
 
     return messages
 
 
-def download_attachments(message, description):
+def download_attachments(message, scenario_name):
     """
 
     Downloads attachments from a single message
@@ -73,14 +73,14 @@ def download_attachments(message, description):
                     '_'
                     f'{month}'
                     ' '
-                    f'{description}'
+                    f'{scenario_name}'
                     f'{attm.filename[-4:]}'
                 ))
 
 
 gmail = Gmail()
 
-#open the external profiles yaml file
+# load the external profiles yaml file
 with open(r'.\profiles.yaml', encoding='utf8') as file:
     profile_list = yaml.load(file, Loader=yaml.FullLoader)
 
