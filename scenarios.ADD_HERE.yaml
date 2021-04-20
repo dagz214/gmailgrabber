@@ -1,5 +1,7 @@
 #The yaml is a list of items like the following syntax:
 - Office 365 Basic: #Name - this is a name that would be used in the resulting file name.
+    scenario_class: attdownloader # mandatory, choose the scenario class, in this example gmailgrabber.AttDownloader 
+                                  # for scenario where an attachment is to be downloaded
     query_params:
       sender: microsoft-noreply@microsoft.com #Arguments that match symplegmail query syntax
       attachment: True

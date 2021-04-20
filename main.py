@@ -14,4 +14,14 @@ with open(r".\scenarios.yaml", encoding="utf8") as file:
 
 scenarios = []
 for sc in scenarios_constructors:
-    scenarios.append(AttDownloader(gmail, list(sc.keys())[0], **list(sc.values())[0]))
+    scenario_name=list(sc.keys())[0]
+    scenario_kwrgs=list(sc.values())[0]
+
+    scenario_class=sc[scenario_name].pop('scenario_class')
+    
+    if scenario_class=='attdownloader':
+        scenarios.append(AttDownloader(gmail, scenario_name, **scenario_kwrgs))
+    elif 1==2:
+        pass
+    else:
+        print(f'The scenario {scenario_name} did not matched any scenario class and was not processed')
