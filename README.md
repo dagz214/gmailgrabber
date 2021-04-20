@@ -16,7 +16,7 @@ Fetch all of those receipts with this SIMPLE ```.yaml```:
       sender: microsoft-noreply@microsoft.com
       attachment: True
       exact_phrase: microsoft 365 business basic
-      months_back: 6
+      newer_than: [3, month]
       
 - Office 365 Standard:				#just a name
     scenario_class: attdownloader	#the type of scenario, in this case its "attachment download"
@@ -24,12 +24,12 @@ Fetch all of those receipts with this SIMPLE ```.yaml```:
       sender: microsoft-noreply@microsoft.com	    #the sender of the message
       attachment: True							    #the messeage has an attachment
       exact_phrase: microsoft 365 business standard #the message contains this phrase
-      months_back: 6 #how far to look back
+      newer_than: [3, month] #how far to look back, can also use day or year and also older_than
 ```
 
 This would not only download your attachment, but will also rename the files to easy to understand, and date-sortable filenames.
 
-Additional functionality for ```query_params``` mentioned in [simplegmail/query.py](https://github.com/jeremyephron/simplegmail/blob/master/simplegmail/query.py).
+Additional functionality for ```query_params``` mentioned in [simplegmail/query.py](https://github.com/jeremyephron/simplegmail/blob/master/simplegmail/query.py).
 
 ## Usage
 
@@ -40,7 +40,6 @@ Additional functionality for ```query_params``` mentioned in [simplegmail/query
 ## Todo
 
 - [ ] Add ability to scrape links from messages that contains links to download document class ```linkDownloder(Downloader)```
-- [ ] Implement seamlessly all the time related queries link in [simplegmail/query.py](https://github.com/jeremyephron/simplegmail/blob/master/simplegmail/query.py).
 - [ ] Add templating for filenames.
 - [ ] Other functionality, for example: delete emails from ```sender older than X months```
 - [ ] Add ability to remove un-needed pages from pdf downloaded attachment, and save original alongside the manipulated pdf file.

@@ -2,8 +2,8 @@
 - Office 365 Basic: #Name - this is a name that would be used in the resulting file name.
     scenario_class: attdownloader # mandatory, choose the scenario class, in this example gmailgrabber.AttDownloader 
                                   # for scenario where an attachment is to be downloaded
-    query_params:
-      sender: microsoft-noreply@microsoft.com #Arguments that match symplegmail query syntax
+    query_params: #Arguments that match symplegmail query syntax
+      sender: microsoft-noreply@microsoft.com
       attachment: True
       exact_phrase: microsoft 365 business Basic
-      months_back: 3 #argument that counts the  months to look back, not as a simplegmail argument.
+      newer_than: [3, month]

@@ -12,14 +12,10 @@ class Scenario:
     def __init__(self, gmail, name: str, **kwrgs):
         self.name = name
 
-        # construct the query params from kwrgs dictionary:
-        query_params = kwrgs.pop("query_params")
-        months_back = query_params.pop("months_back")
-        query_params["newer_than"] = (months_back, "month")
+        # get the query params from kwrgs dictionary:
+        self.query_params = kwrgs.pop("query_params")
 
-        self.query_params = query_params
-
-        self.messages = gmail.get_messages(query=construct_query(query_params))
+        self.messages = gmail.get_messages(query=construct_query(self.query_params))
 
 
 class Downloader(Scenario):
