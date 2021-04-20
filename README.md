@@ -27,7 +27,7 @@ Fetch all of those receipts with this SIMPLE ```.yaml```:
       months_back: 6
 ```
 
-This would not only download your attachment, but will also rename the files to easy to understand, and date-sortable filenames.
+This would not only download your attachment, but will also rename the files to easy to understandable, and date-sortable filenames.
 
 ## Usage
 
@@ -38,8 +38,8 @@ This would not only download your attachment, but will also rename the files to 
 ## Todo
 
 - [ ] Add ability to scrape links from messages that contains links to download document class ```linkDownloder(Downloader)```
-- [ ] Implement seamlessly all the time related queries link in [simplegmail/quey.py](https://github.com/jeremyephron/simplegmail/blob/master/simplegmail/query.py).
+- [ ] Implement seamlessly all the time related queries link in [simplegmail/query.py](https://github.com/jeremyephron/simplegmail/blob/master/simplegmail/query.py).
 - [ ] Add templating for filenames.
-- [ ] Other functionality, for example: delete emails from ```sender``` older than ```X months```
+- [ ] Other functionality, for example: delete emails from ```sender older than X months```
 - [ ] Add ability to remove un-needed pages from pdf downloaded attachment, and save original alongside the manipulated pdf file.
 - [ ] Add ability to remove passwords from documents where not needed.
