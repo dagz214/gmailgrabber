@@ -1,16 +1,11 @@
-
-
 ![logo](https://imgur.com/mU6EB4D.png)
 
 gmailGrabber is an automation tool that utilizes the [simplegmail](https://github.com/jeremyephron/simplegmail) repo. The goal was/is to enable downloading and manipulating email attachments that are repetitive in nature such as bills. The goal now has expanded to more automation possibilities such as deleting, tagging, etc, and all with a very simple ```.yaml``` input.  
 Please join and contribute!
 
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20control%20of%20your%20Gmail%20account%204&url=https://github.com/dagz214/gmailgrabber&hashtags=gmail,python,github,developers)
-
-
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20control%20of%20your%20Gmail%20account%204&url=https://github.com/dagz214/gmailgrabber&hashtags=gmail,python,github,developers) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
 ## Use Cases
-
 
 ### Downloading Attachments
 
@@ -84,15 +79,17 @@ Additional functionality for ```query_params``` mentioned in [simplegmail/query.
 
 ## Usage
 
-1. ```https://github.com/dagz214/gmailgrabber.git```
+1. ```git clone https://github.com/dagz214/gmailgrabber.git```
 
 2. ```pip install -r requirements.txt```
 
-1. Create ```client_secret.json``` and ```gmail_token.json``` file as described in [simplegmail](https://github.com/jeremyephron/simplegmail) GitHub documentation
+3. Create ```client_secret.json``` and ```gmail_token.json``` file as described in [simplegmail](https://github.com/jeremyephron/simplegmail) GitHub documentation
 
-2. Add a ```scenarios.yaml``` file with a structure similar to the example in ```scenarios.ADD_HERE.yaml```
+4. Add a ```scenarios.yaml``` file with a structure similar to the example in ```add_your.scenarios.yaml```
 
-3. Until better implementation is developed, could be used with "Task Scheduler" in Windows or cron in other operating systems.
+5. Run with **Task Scheduler** in Windows or **Cron** in other operating systems.  Also manualy is great:  
+
+    ```python path/to/main.py```
 
 ## Todo
 
@@ -100,4 +97,4 @@ Additional functionality for ```query_params``` mentioned in [simplegmail/query.
 - [ ] Add templating for filenames.
 - [ ] Add ability to remove un-needed pages from pdf downloaded attachment, and save original alongside the manipulated pdf file.
 - [ ] Add ability to remove passwords from documents where not needed.
-- [ ] Labels management.
+- [ ] Labels management and scenarios.
