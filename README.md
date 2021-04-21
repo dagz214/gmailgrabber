@@ -67,7 +67,7 @@ I will add this to ```scenarios.yaml```:
 - Hooli - manage monthly report:
     scenario:
       - mark as important
-      - mark as ready
+      - mark as read
     query_params:
       - sender: no_replies@hooli.com
       - exact_phrase: Your monthly report from Hooli.com is here
