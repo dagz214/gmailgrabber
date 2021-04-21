@@ -1,9 +1,33 @@
 #The yaml is a list of items like the following syntax:
-- Office 365 Basic: #Name - this is a name that would be used in the resulting file name.
-    scenario_class: attdownloader # mandatory, choose the scenario class, in this example gmailgrabber.AttDownloader 
-                                  # for scenario where an attachment is to be downloaded
-    query_params: #Arguments that match symplegmail query syntax
-      sender: microsoft-noreply@microsoft.com
-      attachment: True
-      exact_phrase: microsoft 365 business Basic
-      newer_than: [3, month]
+- Office 365 Standard: #just a name, also used when dwonloaing attachment, so no illegal characters
+    scenario:
+      - download attachment #write an action in the scenario in simple english
+      - star messages
+    query_params: #what to look for:
+      - sender: microsoft-noreply@microsoft.com #the sender of the message
+      - attachment: True #the messeage has an attachment
+      - exact_phrase: microsoft 365 business standard #the message contains this phrase
+      - newer_than: [3, month] #how far to look back, can also use day or year and also older_than
+      - older_than: [1, day]
+
+- Hooli un-needed items:
+    scenario:
+      - send to trash
+    query_params:
+      - sender: no_replies@hooli.com
+      - older_than: [45, day]
+      - or:
+          exact_phrase: 
+              - Hello Mr. Belson, Your daily report from Hooli.com services is ready
+              - Hooli newsletter - Get the most out of your Hooli.com account
+
+- Hooli manage monthly report:
+    scenario:
+      - mark as important
+      - mark as ready
+    query_params:
+      - sender: no_replies@hooli.com
+      - exact_phrase: Your monthly report from Hooli.com is here
+    
+
+
