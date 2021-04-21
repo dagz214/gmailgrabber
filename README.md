@@ -19,24 +19,27 @@ You have a Microsoft 365 Standard account + a Microsoft 365 Basic account.
 Fetch all of those receipts with this SIMPLE ```.yaml```:
 
 ```yaml
-- Hooli un-needed items:
+- Office 365 Standard:
     scenario:
-      - send to trash
-    query_params:
-      - sender: no_replies@hooli.com
-      - older_than: [45, day]
-      - or:
-          exact_phrase: 
-              - Hello Mr. Belson, Your daily report from Hooli.com services is ready
-              - Hooli newsletter - Get the most out of your Hooli.com account
+      - download attachment #write an action in the scenario in simple english
+      - star messages
+    query_params: #what to look for:
+      - sender: microsoft-noreply@microsoft.com
+      - attachment: True
+      - exact_phrase: microsoft 365 business standard #the message contains this phrase
+      - newer_than: [3, month]
+      - older_than: [1, day]
 
-- Hooli manage monthly report:
+- Office 365 Basic: #just a name, also used when dwonloaing attachment, so no illegal characters
     scenario:
-      - mark as important
-      - mark as ready
-    query_params:
-      - sender: no_replies@hooli.com
-      - exact_phrase: Your monthly report from Hooli.com is here
+      - download attachment #write an action in the scenario in simple english
+      - star messages
+    query_params: #what to look for:
+      - sender: microsoft-noreply@microsoft.com #the sender of the message
+      - attachment: True #the messeage has an attachment
+      - exact_phrase: microsoft 365 business basic #the message contains this phrase
+      - newer_than: [3, month] #how far to look back, can also use day or year and also older_than
+      - older_than: [1, day]
 ```
 
 This would not only download your attachment, but will also rename the files to easy to understand, and date-sortable filenames.
