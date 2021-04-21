@@ -1,1 +1,1 @@
-from gmailgrabber.scenario import AttDownloader
+from gmailgrabber.downloader import Scenario
