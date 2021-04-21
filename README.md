@@ -1,4 +1,4 @@
-# gmailGrabber [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20control%20of%20your%20Gmail%20account%204&url=https://github.com/dagz214/gmailgrabber&hashtags=gmail,python,github,developers){:target="_blank"}
+# gmailGrabber [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20control%20of%20your%20Gmail%20account%204&url=https://github.com/dagz214/gmailgrabber&hashtags=gmail,python,github,developers)
 
 
 An automation tool that utilizes the [simplegmail](https://github.com/jeremyephron/simplegmail) repo. The goal was/is to enable downloading and manipulating email attachments that are repetitive in nature such as bills. The goal now has expanded to more automation possibilities such as deleting, tagging, etc, and all with a very simple ```.yaml``` input.  
